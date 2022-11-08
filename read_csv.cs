@@ -3,20 +3,21 @@ using CsvHelper.Configuration;
 using System.Globalization;
 using System.Collections.Generic;
 using tp_final.Properties;
+using tp_final;
 
 namespace csvfiles {
     public class _csv {
-        public List<Pedido> read_csv() {
+        public List<cPedido> read_csv() {
             using (var reader = new StreamReader(Resources.archivo))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture)) {
 
-                List<Pedido> records = new List<Pedido>();
+                List<cPedido> records = new List<cPedido>();
 
                 csv.Read();
                 csv.ReadHeader();
                 while(csv.Read()) {
 
-                    Pedido record = new Pedido {
+                    cPedido record = new cPedido {
                         producto = csv.GetField<string>("producto"),
                         precio = csv.GetField<float>("precio"),
                         ancho = csv.GetField<float>("ancho"),
@@ -34,16 +35,3 @@ namespace csvfiles {
         }
     }
 };
-
-// Esta clase es base para la lectura del archivo
-// Puede ser editada en base a su TP
-public class Pedido {
-    public string? producto { get; set; }
-    public float precio { get; set; }
-    public float largo { get; set; }
-    public float ancho { get; set; }
-    public float alto { get; set; }
-    public string? prioridad { get; set; }
-    public string? barrio { get; set; }
-    public DateTime fecha { get; set; }
-}
