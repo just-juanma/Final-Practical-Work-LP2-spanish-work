@@ -13,9 +13,8 @@ namespace tp_final
         protected float anchoMax;
         protected float largoMax;
         protected float altoMax;
-        // protected cCombustible combustible;
+        protected cCombustible combustible;
         public static uint maxID = 0;
-        protected float nodosRecorridos;
 
         public cVehiculo(float velocidadMedia, float anchoMax, float largoMax, float altoMax)
         {
@@ -24,8 +23,9 @@ namespace tp_final
             this.anchoMax = anchoMax;
             this.largoMax = largoMax;
             this.altoMax = altoMax;
-            this.nodosRecorridos = 0;
+            this.combustible = new cCombustible();
         }
+
 
    
 

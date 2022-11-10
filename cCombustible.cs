@@ -8,20 +8,29 @@ namespace tp_final
 {
     internal class cCombustible
     {
-        private float actual;
-        private float expected;
+        private float actual; // en porcentaje (%)
 
         public cCombustible() 
         {
             this.actual = 100;
-            this.expected = 100;
         }
 
-        // Tomar referencia en base a nodos recorridos, y el tipo de vehiculo (buscar algun tipo de casteo como dynamic cast)
-        //public float getActual(int nodosRecorridos)
-        //{
-        //    return 
-        //}
+        public float getActual(cVehiculo vehiculo)
+        {
+            if(vehiculo is cFurgon)
+            {
+                return this.actual -= ((vehiculo.nodosRecorridos * 21.2F) / 33.3F) * cFurgon.ahorroFurgon;
+            }
+            else if(vehiculo is cFurgoneta)
+            {
+                return this.actual -= ((vehiculo.nodosRecorridos * 7.6F) / 33.3F);
+            }
+            else
+            {
+                return this.actual -= ((vehiculo.nodosRecorridos * 15.2F) / 33.3F);
+            }
+            
+        }
 
 
 

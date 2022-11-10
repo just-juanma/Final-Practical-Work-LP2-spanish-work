@@ -8,7 +8,7 @@ namespace tp_final
 {
     internal class cFurgon : cVehiculo
     {
-        private const float ahorroFurgon = 0.4F;
+        public const float ahorroFurgon = 0.4F;
 
         public cFurgon() : base(80, 190, 240, 237) { }
 
