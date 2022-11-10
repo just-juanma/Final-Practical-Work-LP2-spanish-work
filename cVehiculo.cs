@@ -13,6 +13,8 @@ namespace tp_final
         protected float anchoMax;
         protected float largoMax;
         protected float altoMax;
+        public int nodosRecorridos { get; set; } 
+        public List<cPedido> pedidos { get; set; }
         protected cCombustible combustible;
         public static uint maxID = 0;
 
@@ -24,6 +26,7 @@ namespace tp_final
             this.largoMax = largoMax;
             this.altoMax = altoMax;
             this.combustible = new cCombustible();
+            this.pedidos = new List<cPedido>();
         }
 
 

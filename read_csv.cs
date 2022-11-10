@@ -26,7 +26,6 @@ namespace csvfiles {
                         prioridad = csv.GetField<string>("prioridad"),
                         barrio = csv.GetField<string>("barrio"),
                         fecha = new DateTime(csv.GetField<int>("fecha")),
-                        distancia = 0
                     };
                     records.Add(record);
                 }
@@ -35,4 +34,5 @@ namespace csvfiles {
             }
         }
     }
+
 };
