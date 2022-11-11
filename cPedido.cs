@@ -15,7 +15,8 @@ namespace tp_final
         public float alto { get; set; }
         public string? prioridad { get; set; }
         public string? barrio { get; set; }
-        public DateTime fecha { get; set; }  
-     
+        public DateTime fecha { get; set; }
+
+    
     }
 }

@@ -12,7 +12,7 @@ namespace csvfiles {
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture)) {
 
                 List<cPedido> records = new List<cPedido>();
-
+                cGreedy greedyTemplate = new cGreedy();
                 csv.Read();
                 csv.ReadHeader();
                 while(csv.Read()) {
@@ -27,6 +27,7 @@ namespace csvfiles {
                         barrio = csv.GetField<string>("barrio"),
                         fecha = new DateTime(csv.GetField<int>("fecha")),
                     };
+                    greedyTemplate.template.Add(csv.GetField<string>("template"));
                     records.Add(record);
                 }
 

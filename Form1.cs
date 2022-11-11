@@ -21,18 +21,15 @@ public partial class Form1 : Form
         // cargar en vehiculos
 
         // GREEDY
-        // armar recorrido camioneta con las listas de pedidos de la clase cVehiculo preparados
-        // camioneta.insertarRecorrido(armarRecorrido(camioneta.pedidos));
-        // y asi con furgoneta y furgon (para camioneta tener en cuenta de hacerlo hasta 4 veces mas -> while(pedidos.Any() == true && i < 3)...
         List<cPedido> ordenPedidos = new List<cPedido>();
         int i = 0;
-        while(pedidos.Any() && i < 3)
+        while (pedidos.Any() && i < 3)
         {
             ordenPedidos = greedy.ordenarPedidos(camioneta.pedidos);
         }
         ordenPedidos = greedy.ordenarPedidos(furgon.pedidos);
         ordenPedidos = greedy.ordenarPedidos(furgoneta.pedidos);
-        
+
 
 
 
