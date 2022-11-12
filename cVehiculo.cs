@@ -13,6 +13,7 @@ namespace tp_final
         protected float anchoMax;
         protected float largoMax;
         protected float altoMax;
+        public int volumenMax { get; set; }
         public int nodosRecorridos { get; set; } 
         public List<cPedido> pedidos { get; set; }
         protected cCombustible combustible;
@@ -25,6 +26,7 @@ namespace tp_final
             this.anchoMax = anchoMax;
             this.largoMax = largoMax;
             this.altoMax = altoMax;
+            this.volumenMax = Convert.ToInt32(altoMax * largoMax * anchoMax);
             this.combustible = new cCombustible();
             this.pedidos = new List<cPedido>();
         }
