@@ -13,12 +13,14 @@ public partial class Form1 : Form
         var csv_ = new csvfiles._csv();
         List<cPedido> pedidos = csv_.read_csv();
         cGreedy greedy = new cGreedy();
+        cProgDinamica progDin = new cProgDinamica();
 
         cFurgon furgon = new cFurgon();
         cFurgoneta furgoneta = new cFurgoneta();
         cCamioneta camioneta = new cCamioneta();
 
-        // cargar en vehiculos
+        // PROGRAMACION DINAMICA
+        progDin.cargarPedidos(pedidos, furgon);
 
         // GREEDY
         List<cPedido> ordenPedidos = new List<cPedido>();

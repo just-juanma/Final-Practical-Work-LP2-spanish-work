@@ -9,7 +9,7 @@ namespace tp_final
     internal class cCamioneta : cVehiculo
     {
         private float dSuelo;
-        public cCamioneta() : base(100, 1441, 3092, 1233) 
+        public cCamioneta() : base(100, 900, 300, 600, 750) 
         {
             this.dSuelo = 186;
         }

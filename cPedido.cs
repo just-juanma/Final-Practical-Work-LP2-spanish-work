@@ -14,6 +14,7 @@ namespace tp_final
         public float ancho { get; set; }
         public float alto { get; set; }
         public int volumen { get; set; }
+        public int peso { get; set; }
         public int prioridad { get; set; }
         public string? barrio { get; set; }
         public DateTime fecha { get; set; }
