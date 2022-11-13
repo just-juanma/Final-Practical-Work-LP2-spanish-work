@@ -9,21 +9,11 @@ namespace tp_final
 {
     internal class cProgDinamica
     {
-        /// <summary>
-        /// Carga los pedidos, optimizando el volumen-peso-prioridad de cada pedido, en relacion con el del vehiculo
-        /// </summary>
-        /// <param name="pedidos">lista de pedidos a cargar</param>
-        /// <param name="vehiculo">vehiculo a cargar pedidos</param>
-        public void cargarPedidos(List<cPedido> pedidos, cVehiculo vehiculo)
+        public void ordenarPorVolumen(List<cPedido> pedidos)
         {
+            // Primer algoritmo: ordeno los volumenes de los pedidos de menor a mayor
             cPedido foo;
             int i, j;
-            float sumVol = 0;
-            int nuevaCantPedidos = 0;
-            int sumPeso = 0;
-
-            // Primer algoritmo: ordeno los volumenes de los pedidos de menor a mayor
-
             for (i = 0; i < pedidos.Count - 1; i++)
                 for (j = i + 1; j < pedidos.Count; j++)
                     if (pedidos[i].volumen > pedidos[j].volumen)
@@ -32,6 +22,19 @@ namespace tp_final
                         pedidos[i] = pedidos[j];
                         pedidos[j] = foo;
                     }
+        }
+
+        /// <summary>
+        /// Carga los pedidos, optimizando el volumen-peso-prioridad de cada pedido, en relacion con el del vehiculo
+        /// </summary>
+        /// <param name="pedidos">lista de pedidos a cargar</param>
+        /// <param name="vehiculo">vehiculo a cargar pedidos</param>
+        public void cargarPedidos(List<cPedido> pedidos, cVehiculo vehiculo)
+        {
+            int i, j;
+            float sumVol = 0;
+            int nuevaCantPedidos = 0;
+            int sumPeso = 0;
 
             // Segundo algoritmo: vorazmente checkeo cuantos pedidos pueden entrar (segun el volumen)
 
@@ -75,11 +78,11 @@ namespace tp_final
                 }
             }
             Console.WriteLine("Vehiculo numero: " + vehiculo.ID + "\t" + "Volumen total: " + vehiculo.volumenMax + " Peso total: " + vehiculo.pesoMax);
-            Console.WriteLine("Pedidos:\t\t" + "Volumen total: " + sumVol + " Peso total: " + sumPeso);
+            Console.WriteLine("Pedidos:\t\t" + "Volumen total: " + sumVol + " Peso total: " + sumPeso + " Cant: " + vehiculo.pedidos.Count);
             Console.WriteLine("N pedido\t\t" + "Volumen\t\t" + "Peso\t\t" + "Prioridad");
             for(i = 0; i < vehiculo.pedidos.Count; i++)
             {
-                Console.WriteLine(i + "\t\t\t" + vehiculo.pedidos[i].volumen + "\t\t" + vehiculo.pedidos[i].peso + "\t\t" + vehiculo.pedidos[i].prioridad);
+                Console.WriteLine(vehiculo.pedidos[i].ID + "\t\t\t" + vehiculo.pedidos[i].volumen + "\t\t" + vehiculo.pedidos[i].peso + "\t\t" + vehiculo.pedidos[i].prioridad);
             }
             Console.Write("\n\n\n");
         }

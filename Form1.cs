@@ -15,31 +15,30 @@ public partial class Form1 : Form
         cGreedy greedy = new cGreedy();
         cProgDinamica progDin = new cProgDinamica();
         List<cPedido> pedidos = csv_.read_csv(greedy);
+        progDin.ordenarPorVolumen(pedidos);
 
         // C_FURGON
         cFurgon furgon = new cFurgon();
         progDin.cargarPedidos(pedidos, furgon);
         greedy.ordenarPedidos(furgon.pedidos);
-        furgon.repartirPedidos();
+        furgon.repartirPedidos(pedidos);
 
         // C_FURGONETA
         cFurgoneta furgoneta = new cFurgoneta();
         progDin.cargarPedidos(pedidos, furgoneta);
         greedy.ordenarPedidos(furgoneta.pedidos);
-        furgoneta.repartirPedidos();
+        furgoneta.repartirPedidos(pedidos);
 
 
         // C_CAMIONETA FIXEAR GREEDY
         cCamioneta camioneta = new cCamioneta();
-        progDin.cargarPedidos(pedidos, camioneta);
-        while (camioneta.pedidos.Count != 0 && i < 2)
+        while (pedidos.Count != 0 && i < 3)
         {
-            greedy.ordenarPedidos(camioneta.pedidos);
-            camioneta.repartirPedidos();
             progDin.cargarPedidos(pedidos, camioneta);
+            greedy.ordenarPedidos(camioneta.pedidos);
+            camioneta.repartirPedidos(pedidos);
             i++;
         }
-
     }
 
     // Windows Forms

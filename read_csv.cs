@@ -28,6 +28,7 @@ namespace csvfiles {
                         barrio = csv.GetField<string>("barrio"),
                         fecha = new DateTime(csv.GetField<int>("fecha")),
                     };
+                    record.ID = cPedido.maxID++;
                     if(csv.GetField<string>("template") != "")
                     {
                         greedy.template.Add(csv.GetField<string>("template"));

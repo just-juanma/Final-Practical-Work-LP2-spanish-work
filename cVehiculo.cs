@@ -32,11 +32,12 @@ namespace tp_final
             this.pedidos = new List<cPedido>();
         }
 
-        public void repartirPedidos()
+        public void repartirPedidos(List<cPedido> pedidosTotal)
         {
-            for(int i = 0; i < pedidos.Count; i++)
+            int i = 0;
+            for (i = 0; i < pedidos.Count; i++)
             {
-                if(combustible.getActual(this) != 0)
+                if (combustible.getActual(this) != 0)
                 {
                     pedidos.Remove(pedidos[i]);
                 }
@@ -45,6 +46,13 @@ namespace tp_final
                     Console.WriteLine("Vehiculo sin combustible ... Recargando...");
                     combustible.actual = 100;
                 }
+            }
+            // reseteo count a 0
+            pedidos.Clear();
+            while (pedidosTotal[i].cargado == true)
+            {
+                pedidosTotal.Remove(pedidosTotal[i]);
+                i++;
             }
         }
 
