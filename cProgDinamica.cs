@@ -24,7 +24,7 @@ namespace tp_final
 
             for (i = 0; i < pedidos.Count - 1; i++)
                 for (j = i + 1; j < pedidos.Count; j++)
-                    if (pedidos[j].volumen > pedidos[j].volumen)
+                    if (pedidos[i].volumen > pedidos[j].volumen)
                     {
                         foo = pedidos[i];
                         pedidos[i] = pedidos[j];

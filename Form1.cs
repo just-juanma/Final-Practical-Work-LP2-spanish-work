@@ -20,15 +20,20 @@ public partial class Form1 : Form
         cCamioneta camioneta = new cCamioneta();
 
         // PROGRAMACION DINAMICA
+        int i = 0;
         progDin.cargarPedidos(pedidos, furgon);
+        progDin.cargarPedidos(pedidos, furgoneta);
+        
+        while (pedidos.Any() && i < 3)
+        {
+            progDin.cargarPedidos(pedidos, camioneta);
+        }
 
         // GREEDY
         List<cPedido> ordenPedidos = new List<cPedido>();
-        int i = 0;
-        while (pedidos.Any() && i < 3)
-        {
             ordenPedidos = greedy.ordenarPedidos(camioneta.pedidos);
-        }
+
+      
         ordenPedidos = greedy.ordenarPedidos(furgon.pedidos);
         ordenPedidos = greedy.ordenarPedidos(furgoneta.pedidos);
 
