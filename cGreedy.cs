@@ -31,9 +31,15 @@ namespace tp_final
                     }
                 }
             }
-            return pedidosOrdenados;
-        }
 
+            //foreach(var pedido in pedidosOrdenados)
+            //{
+
+            //}
+
+            return pedidosOrdenados;
+            
+        }
 
 
     }

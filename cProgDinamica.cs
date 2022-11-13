@@ -20,7 +20,7 @@ namespace tp_final
             int i, j;
             float sumVol = 0;
             int nuevaCantPedidos = 0;
-            int sumaPeso = 0;
+            int sumPeso = 0;
 
             for (i = 0; i < pedidos.Count - 1; i++)
                 for (j = i + 1; j < pedidos.Count; j++)
@@ -33,12 +33,11 @@ namespace tp_final
 
             for (i = 0; i < pedidos.Count; i++)
             {
-                if (sumVol <= vehiculo.volumenMax)
+                if (sumVol + pedidos[i].volumen < vehiculo.volumenMax && pedidos[i].cargado == false)
                 {
                     sumVol += pedidos[i].volumen;
                     nuevaCantPedidos++;
                 }
-                else break;
             }
 
             int[,] solucion = new int[nuevaCantPedidos + 1, vehiculo.pesoMax + 1];
@@ -58,11 +57,11 @@ namespace tp_final
                                                   solucion[i - 1, j]);
                         if (pedidos[i - 1].prioridad + solucion[i - 1, j - pedidos[i - 1].peso] > solucion[i - 1, j] // hubo modificaciones en la matriz prog. dinamica?
                             && pedidos[i - 1].cargado == false // se cargo el pedido anteriormente?
-                            && sumaPeso + pedidos[i - 1].peso < vehiculo.pesoMax) // se excede el peso del vehiculo?
+                            && sumPeso + pedidos[i - 1].peso < vehiculo.pesoMax) // se excede el peso del vehiculo?
                         {
                             vehiculo.pedidos.Add(pedidos[i - 1]); 
                             pedidos[i - 1].cargado = true;
-                            sumaPeso += pedidos[i - 1].peso;
+                            sumPeso += pedidos[i - 1].peso;
                         }
                     }
                     else
@@ -71,7 +70,14 @@ namespace tp_final
                     }
                 }
             }
-            Console.WriteLine(sumaPeso);
+            Console.WriteLine("Vehiculo numero: " + vehiculo.ID + "\t" + "Volumen total: " + vehiculo.volumenMax + " Peso total: " + vehiculo.pesoMax);
+            Console.WriteLine("Pedidos:\t\t" + "Volumen total: " + sumVol + " Peso total: " + sumPeso);
+            Console.WriteLine("N pedido\t\t" + "Volumen\t\t" + "Peso\t\t" + "Prioridad");
+            for(i = 0; i < vehiculo.pedidos.Count; i++)
+            {
+                Console.WriteLine(i + "\t\t\t" + vehiculo.pedidos[i].volumen + "\t\t" + vehiculo.pedidos[i].peso + "\t\t" + vehiculo.pedidos[i].prioridad);
+            }
+            Console.Write("\n\n\n");
         }
     }
 }

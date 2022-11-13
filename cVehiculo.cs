@@ -8,7 +8,7 @@ namespace tp_final
 {
     internal class cVehiculo
     {
-        protected readonly uint ID;
+        public readonly uint ID;
         protected float velocidadMedia;
         protected float anchoMax;
         protected float largoMax;

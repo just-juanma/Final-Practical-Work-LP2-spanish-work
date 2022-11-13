@@ -19,27 +19,39 @@ public partial class Form1 : Form
         cFurgoneta furgoneta = new cFurgoneta();
         cCamioneta camioneta = new cCamioneta();
 
-        // PROGRAMACION DINAMICA
+
+        //// PROGRAMACION DINAMICA
         int i = 0;
         progDin.cargarPedidos(pedidos, furgon);
         progDin.cargarPedidos(pedidos, furgoneta);
-        
-        while (pedidos.Any() && i < 3)
-        {
-            progDin.cargarPedidos(pedidos, camioneta);
-        }
+        progDin.cargarPedidos(pedidos, camioneta);
 
-        // GREEDY
+        //// GREEDY
         List<cPedido> ordenPedidos = new List<cPedido>();
-            ordenPedidos = greedy.ordenarPedidos(camioneta.pedidos);
+        ordenPedidos = greedy.ordenarPedidos(camioneta.pedidos);
 
-      
-        ordenPedidos = greedy.ordenarPedidos(furgon.pedidos);
-        ordenPedidos = greedy.ordenarPedidos(furgoneta.pedidos);
+
+        //ordenPedidos = greedy.ordenarPedidos(furgon.pedidos);
+        //ordenPedidos = greedy.ordenarPedidos(furgoneta.pedidos);
 
 
 
 
     }
 
+    
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+    }
+
+    private void btnPrograma_Click(object sender, EventArgs e)
+    {
+        
+    }
+
+    private void btnProgDin_Click(object sender, EventArgs e)
+    {
+
+    }
 }
