@@ -10,7 +10,7 @@ namespace tp_final
     internal class cProgDinamica
     {
         /// <summary>
-        /// Carga los pedidos, optimizando el volumen-prioridad de cada pedido, en relacion con el del vehiculo
+        /// Carga los pedidos, optimizando el volumen-peso-prioridad de cada pedido, en relacion con el del vehiculo
         /// </summary>
         /// <param name="pedidos">lista de pedidos a cargar</param>
         /// <param name="vehiculo">vehiculo a cargar pedidos</param>
@@ -22,6 +22,8 @@ namespace tp_final
             int nuevaCantPedidos = 0;
             int sumPeso = 0;
 
+            // Primer algoritmo: ordeno los volumenes de los pedidos de menor a mayor
+
             for (i = 0; i < pedidos.Count - 1; i++)
                 for (j = i + 1; j < pedidos.Count; j++)
                     if (pedidos[i].volumen > pedidos[j].volumen)
@@ -30,6 +32,8 @@ namespace tp_final
                         pedidos[i] = pedidos[j];
                         pedidos[j] = foo;
                     }
+
+            // Segundo algoritmo: vorazmente checkeo cuantos pedidos pueden entrar (segun el volumen)
 
             for (i = 0; i < pedidos.Count; i++)
             {

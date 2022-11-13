@@ -8,12 +8,11 @@ using System.Runtime;
 
 namespace csvfiles {
     public class _csv {
-        public List<cPedido> read_csv() {
+        public List<cPedido> read_csv(cGreedy greedy) {
             using (var reader = new StreamReader(Resources.archivo))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture)) {
 
                 List<cPedido> records = new List<cPedido>();
-                cGreedy greedyTemplate = new cGreedy();
                 csv.Read();
                 csv.ReadHeader();
                 while(csv.Read()) {
@@ -29,7 +28,10 @@ namespace csvfiles {
                         barrio = csv.GetField<string>("barrio"),
                         fecha = new DateTime(csv.GetField<int>("fecha")),
                     };
-                    greedyTemplate.template.Add(csv.GetField<string>("template"));
+                    if(csv.GetField<string>("template") != "")
+                    {
+                        greedy.template.Add(csv.GetField<string>("template"));
+                    }
                     record.volumen = Convert.ToInt32(record.ancho * record.alto * record.largo);
                     records.Add(record);
                 }

@@ -9,37 +9,40 @@ public partial class Form1 : Form
     {
         // Inicializaciones
 
+        int i = 0;
         InitializeComponent();
         var csv_ = new csvfiles._csv();
-        List<cPedido> pedidos = csv_.read_csv();
         cGreedy greedy = new cGreedy();
         cProgDinamica progDin = new cProgDinamica();
+        List<cPedido> pedidos = csv_.read_csv(greedy);
 
+        // C_FURGON
         cFurgon furgon = new cFurgon();
-        cFurgoneta furgoneta = new cFurgoneta();
-        cCamioneta camioneta = new cCamioneta();
-
-
-        //// PROGRAMACION DINAMICA
-        int i = 0;
         progDin.cargarPedidos(pedidos, furgon);
+        greedy.ordenarPedidos(furgon.pedidos);
+        furgon.repartirPedidos();
+
+        // C_FURGONETA
+        cFurgoneta furgoneta = new cFurgoneta();
         progDin.cargarPedidos(pedidos, furgoneta);
+        greedy.ordenarPedidos(furgoneta.pedidos);
+        furgoneta.repartirPedidos();
+
+
+        // C_CAMIONETA FIXEAR GREEDY
+        cCamioneta camioneta = new cCamioneta();
         progDin.cargarPedidos(pedidos, camioneta);
-
-        //// GREEDY
-        List<cPedido> ordenPedidos = new List<cPedido>();
-        ordenPedidos = greedy.ordenarPedidos(camioneta.pedidos);
-
-
-        //ordenPedidos = greedy.ordenarPedidos(furgon.pedidos);
-        //ordenPedidos = greedy.ordenarPedidos(furgoneta.pedidos);
-
-
-
+        while (camioneta.pedidos.Count != 0 && i < 2)
+        {
+            greedy.ordenarPedidos(camioneta.pedidos);
+            camioneta.repartirPedidos();
+            progDin.cargarPedidos(pedidos, camioneta);
+            i++;
+        }
 
     }
 
-    
+    // Windows Forms
 
     private void button1_Click(object sender, EventArgs e)
     {

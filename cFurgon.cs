@@ -10,7 +10,7 @@ namespace tp_final
     {
         public const float ahorroFurgon = 0.4F;
 
-        public cFurgon() : base(80, 190, 240, 237, 500) { }
+        public cFurgon() : base(219, 725.4F, 289.4F, 2519) { }
 
     }
 }

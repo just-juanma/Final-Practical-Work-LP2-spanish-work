@@ -8,6 +8,6 @@ namespace tp_final
 {
     internal class cFurgoneta : cVehiculo
     {
-        public cFurgoneta() : base(80, 200, 300, 400, 3500) { }
+        public cFurgoneta() : base(205, 636.3F, 252.4F, 2060) { }
     }
 }

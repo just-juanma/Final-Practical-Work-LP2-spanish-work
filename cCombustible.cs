@@ -8,7 +8,7 @@ namespace tp_final
 {
     internal class cCombustible
     {
-        private float actual; // en porcentaje (%)
+        public float actual { get; set; } // en porcentaje (%)
 
         public cCombustible() 
         {

@@ -17,27 +17,33 @@ namespace tp_final
             template = new List<string>();
         }
 
-        public List<cPedido> ordenarPedidos(List<cPedido> pedidos)
+        public void ordenarPedidos(List<cPedido> pedidos)
         {
             List<cPedido> pedidosOrdenados = new List<cPedido>();
+            bool[] visitados = new bool[template.Count];
 
             for (int i = 0; i < template.Count; i++)
             {
                 for (int j = 0; j < pedidos.Count; j++)
                 {
-                    if (template[i] == pedidos[j].barrio)
+                    if (template[i] == pedidos[j].barrio &&
+                        visitados[i] == false)
                     {
                         pedidosOrdenados.Add(pedidos[j]);
+                        visitados[i] = true;
                     }
                 }
             }
 
-            //foreach(var pedido in pedidosOrdenados)
-            //{
+            pedidos = pedidosOrdenados;
 
-            //}
+            Console.WriteLine("Recorrido: ");
+            foreach (var pedido in pedidos)
+            {
+                Console.WriteLine(pedido.barrio);
+            }
+            Console.Write("\n\n\n");
 
-            return pedidosOrdenados;
             
         }
 
