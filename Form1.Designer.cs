@@ -50,6 +50,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtBoxPesoPedido = new System.Windows.Forms.TextBox();
             this.btnGreedy = new System.Windows.Forms.Button();
+            this.listRecorrrido = new System.Windows.Forms.ListView();
+            this.recorrido = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // listPedidos
@@ -234,11 +236,28 @@
             this.btnGreedy.UseVisualStyleBackColor = true;
             this.btnGreedy.Click += new System.EventHandler(this.d_Click);
             // 
+            // listRecorrrido
+            // 
+            this.listRecorrrido.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.recorrido});
+            this.listRecorrrido.Location = new System.Drawing.Point(12, 133);
+            this.listRecorrrido.Name = "listRecorrrido";
+            this.listRecorrrido.Size = new System.Drawing.Size(177, 494);
+            this.listRecorrrido.TabIndex = 19;
+            this.listRecorrrido.UseCompatibleStateImageBehavior = false;
+            this.listRecorrrido.View = System.Windows.Forms.View.Details;
+            // 
+            // recorrido
+            // 
+            this.recorrido.Text = "Recorrido";
+            this.recorrido.Width = 150;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 639);
+            this.Controls.Add(this.listRecorrrido);
             this.Controls.Add(this.btnGreedy);
             this.Controls.Add(this.txtBoxPesoPedido);
             this.Controls.Add(this.label8);
@@ -288,5 +307,7 @@
         private TextBox txtBoxPesoPedido;
         private Button btnGreedy;
         private ColumnHeader Destino;
+        private ListView listRecorrrido;
+        private ColumnHeader recorrido;
     }
 }

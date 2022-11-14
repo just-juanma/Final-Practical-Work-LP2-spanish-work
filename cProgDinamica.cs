@@ -86,14 +86,6 @@ namespace tp_final
             }
             vehiculo.pesoActual = sumPeso;
             vehiculo.volumenActual = sumVol;
-            Console.WriteLine("Vehiculo numero: " + vehiculo.ID + "\t" + "Volumen total: " + vehiculo.volumenMax + " Peso total: " + vehiculo.pesoMax);
-            Console.WriteLine("Pedidos:\t\t" + "Volumen total: " + sumVol + " Peso total: " + sumPeso + " Cant: " + vehiculo.pedidos.Count);
-            Console.WriteLine("N pedido\t\t" + "Volumen\t\t" + "Peso\t\t" + "Prioridad");
-            for(i = 0; i < vehiculo.pedidos.Count; i++)
-            {
-                Console.WriteLine(vehiculo.pedidos[i].ID + "\t\t\t" + vehiculo.pedidos[i].volumen + "\t\t" + vehiculo.pedidos[i].peso + "\t\t" + vehiculo.pedidos[i].prioridad);
-            }
-            Console.Write("\n\n\n");
         }
     }
 }

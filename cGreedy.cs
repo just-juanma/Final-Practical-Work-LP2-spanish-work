@@ -17,7 +17,7 @@ namespace tp_final
             template = new List<string>();
         }
 
-        public void ordenarPedidos(List<cPedido> pedidos)
+        public List<cPedido> ordenarPedidos(List<cPedido> pedidos)
         {
             List<cPedido> pedidosOrdenados = new List<cPedido>();
             bool[] visitados = new bool[template.Count];
@@ -34,17 +34,7 @@ namespace tp_final
                     }
                 }
             }
-
-            pedidos = pedidosOrdenados;
-
-            Console.WriteLine("Recorrido: ");
-            foreach (var pedido in pedidos)
-            {
-                Console.WriteLine(pedido.barrio);
-            }
-            Console.Write("\n\n\n");
-
-            
+            return pedidosOrdenados;
         }
 
 

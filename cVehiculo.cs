@@ -36,7 +36,7 @@ namespace tp_final
 
         public void repartirPedidos(List<cPedido> pedidosTotal)
         {
-            int i = 0;
+            int i;
             for (i = 0; i < pedidos.Count; i++)
             {
                 if (combustible.getActual(this) != 0)
