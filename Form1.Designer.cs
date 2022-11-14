@@ -56,6 +56,7 @@
             // 
             // listPedidos
             // 
+            this.listPedidos.BackColor = System.Drawing.SystemColors.ControlLight;
             this.listPedidos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.NPedido,
             this.VolumenPedido,
@@ -176,11 +177,11 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(491, 86);
+            this.btnSiguiente.Location = new System.Drawing.Point(491, 73);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(140, 41);
+            this.btnSiguiente.Size = new System.Drawing.Size(140, 54);
             this.btnSiguiente.TabIndex = 12;
-            this.btnSiguiente.Text = "Siguiente vehiculo";
+            this.btnSiguiente.Text = "Entregar pedidos y avanzar al siguiente vehiculo";
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
@@ -238,6 +239,7 @@
             // 
             // listRecorrrido
             // 
+            this.listRecorrrido.BackColor = System.Drawing.SystemColors.ControlLight;
             this.listRecorrrido.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.recorrido});
             this.listRecorrrido.Location = new System.Drawing.Point(12, 133);
@@ -256,7 +258,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 639);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(883, 639);
             this.Controls.Add(this.listRecorrrido);
             this.Controls.Add(this.btnGreedy);
             this.Controls.Add(this.txtBoxPesoPedido);
@@ -276,7 +279,7 @@
             this.Controls.Add(this.txtBoxID);
             this.Controls.Add(this.btnDinamica);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Cocimundo";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
