@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tp_final
 {
-    internal class cFurgoneta : cVehiculo
+    public class cFurgoneta : cVehiculo
     {
         public cFurgoneta() : base(205, 636.3F, 252.4F, 2060) { }
     }

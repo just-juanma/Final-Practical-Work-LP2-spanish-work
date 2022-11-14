@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tp_final
 {
-    internal class cFurgon : cVehiculo
+    public class cFurgon : cVehiculo
     {
         public const float ahorroFurgon = 0.4F;
 

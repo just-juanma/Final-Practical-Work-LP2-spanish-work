@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace tp_final
 {
-    internal class cProgDinamica
+    public class cProgDinamica
     {
+        /// <summary>
+        /// Algoritmo greedy que ordena los pedidos por volumen, filtrando para que luego pase
+        /// a la matriz por prog. dinamica
+        /// </summary>
+        /// <param name="pedidos">pedidos a ordenar por volumen</param>
         public void ordenarPorVolumen(List<cPedido> pedidos)
         {
             // Primer algoritmo: ordeno los volumenes de los pedidos de menor a mayor
@@ -47,6 +52,7 @@ namespace tp_final
                 }
             }
 
+            // Armo la matriz de soluciones en base a mi sub-lista de pedidos (acortada por el tope de volumen)
             int[,] solucion = new int[nuevaCantPedidos + 1, vehiculo.pesoMax + 1];
 
 
@@ -62,6 +68,7 @@ namespace tp_final
                     {
                         solucion[i, j] = Math.Max(pedidos[i - 1].prioridad + solucion[i - 1, j - pedidos[i - 1].peso],
                                                   solucion[i - 1, j]);
+                        // **** SISTEMA NACIONAL DE VERIFICACION DE PEDIDOS AL VEHICULO ****
                         if (pedidos[i - 1].prioridad + solucion[i - 1, j - pedidos[i - 1].peso] > solucion[i - 1, j] // hubo modificaciones en la matriz prog. dinamica?
                             && pedidos[i - 1].cargado == false // se cargo el pedido anteriormente?
                             && sumPeso + pedidos[i - 1].peso < vehiculo.pesoMax) // se excede el peso del vehiculo?
@@ -77,6 +84,8 @@ namespace tp_final
                     }
                 }
             }
+            vehiculo.pesoActual = sumPeso;
+            vehiculo.volumenActual = sumVol;
             Console.WriteLine("Vehiculo numero: " + vehiculo.ID + "\t" + "Volumen total: " + vehiculo.volumenMax + " Peso total: " + vehiculo.pesoMax);
             Console.WriteLine("Pedidos:\t\t" + "Volumen total: " + sumVol + " Peso total: " + sumPeso + " Cant: " + vehiculo.pedidos.Count);
             Console.WriteLine("N pedido\t\t" + "Volumen\t\t" + "Peso\t\t" + "Prioridad");

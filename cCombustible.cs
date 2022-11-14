@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tp_final
 {
-    internal class cCombustible
+    public class cCombustible
     {
         public float actual { get; set; } // en porcentaje (%)
 

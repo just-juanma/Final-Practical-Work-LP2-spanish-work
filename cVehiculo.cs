@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tp_final
 {
-    internal class cVehiculo
+    public class cVehiculo
     {
         public readonly uint ID;
         protected float velocidadMedia;
@@ -14,7 +14,9 @@ namespace tp_final
         protected float largoMax;
         protected float altoMax;
         public int pesoMax { get; set; }
-        public int volumenMax { get; set; }
+        public float volumenMax { get; set; }
+        public int pesoActual { get; set; }
+        public float volumenActual { get; set; }
         public int nodosRecorridos { get; set; } 
         public List<cPedido> pedidos { get; set; }
         protected cCombustible combustible;
@@ -27,7 +29,7 @@ namespace tp_final
             this.largoMax = largoMax;
             this.altoMax = altoMax;
             this.pesoMax = pesoMax;
-            this.volumenMax = Convert.ToInt32(altoMax * largoMax * anchoMax);
+            this.volumenMax = altoMax * largoMax * anchoMax;
             this.combustible = new cCombustible();
             this.pedidos = new List<cPedido>();
         }

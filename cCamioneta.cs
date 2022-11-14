@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tp_final
 {
-    internal class cCamioneta : cVehiculo
+    public class cCamioneta : cVehiculo
     {
         private float dSuelo;
         public cCamioneta() : base(176, 439.7F, 186, 688)

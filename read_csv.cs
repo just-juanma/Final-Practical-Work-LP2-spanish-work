@@ -33,7 +33,7 @@ namespace csvfiles {
                     {
                         greedy.template.Add(csv.GetField<string>("template"));
                     }
-                    record.volumen = Convert.ToInt32(record.ancho * record.alto * record.largo);
+                    record.volumen = record.ancho * record.alto * record.largo;
                     records.Add(record);
                 }
 
