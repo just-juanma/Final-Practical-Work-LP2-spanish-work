@@ -61,7 +61,7 @@ namespace tp_final.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ..\..\..\datad.csv.
+        ///   Looks up a localized string similar to ..\..\..\data.csv.
         /// </summary>
         internal static string archivo {
             get {
