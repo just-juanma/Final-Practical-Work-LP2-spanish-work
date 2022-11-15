@@ -36,7 +36,6 @@ namespace csvfiles {
                     record.volumen = record.ancho * record.alto * record.largo;
                     records.Add(record);
                 }
-
                 return records;
             }
         }
