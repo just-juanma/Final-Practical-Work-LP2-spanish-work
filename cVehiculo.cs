@@ -19,6 +19,7 @@ namespace tp_final
         public float volumenActual { get; set; }
         public int nodosRecorridos { get; set; } 
         public List<cPedido> pedidos { get; set; }
+        public bool flagCombustible { get; set; }
         protected cCombustible combustible;
         public static uint maxID = 0;
 
@@ -32,25 +33,29 @@ namespace tp_final
             this.volumenMax = altoMax * largoMax * anchoMax;
             this.combustible = new cCombustible();
             this.pedidos = new List<cPedido>();
+            this.flagCombustible = false;
         }
 
         public void repartirPedidos(List<cPedido> pedidosTotal)
         {
             int i;
+            this.flagCombustible = false;
             for (i = 0; i < pedidos.Count; i++)
             {
+                this.nodosRecorridos++;
                 if (combustible.getActual(this) != 0)
                 {
-                    pedidos.Remove(pedidos[i]);
+                    this.pedidos.Remove(pedidos[i]);
                 }
                 else
                 {
-                    Console.WriteLine("Vehiculo sin combustible ... Recargando...");
-                    combustible.actual = 100;
+                    this.flagCombustible = true;
+                    this.combustible.actual = 100;
                 }
             }
             // reseteo count a 0
-            pedidos.Clear();
+            this.pedidos.Clear();
+            i = 0;
             while (pedidosTotal[i].cargado == true)
             {
                 pedidosTotal.Remove(pedidosTotal[i]);

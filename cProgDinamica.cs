@@ -68,7 +68,6 @@ namespace tp_final
                     {
                         solucion[i, j] = Math.Max(pedidos[i - 1].prioridad + solucion[i - 1, j - pedidos[i - 1].peso],
                                                   solucion[i - 1, j]);
-                        // **** SISTEMA NACIONAL DE VERIFICACION DE PEDIDOS AL VEHICULO ****
                         if (pedidos[i - 1].prioridad + solucion[i - 1, j - pedidos[i - 1].peso] > solucion[i - 1, j] // hubo modificaciones en la matriz prog. dinamica?
                             && pedidos[i - 1].cargado == false // se cargo el pedido anteriormente?
                             && sumPeso + pedidos[i - 1].peso < vehiculo.pesoMax) // se excede el peso del vehiculo?

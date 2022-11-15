@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listPedidos = new System.Windows.Forms.ListView();
             this.NPedido = new System.Windows.Forms.ColumnHeader();
             this.VolumenPedido = new System.Windows.Forms.ColumnHeader();
@@ -52,6 +53,8 @@
             this.btnGreedy = new System.Windows.Forms.Button();
             this.listRecorrrido = new System.Windows.Forms.ListView();
             this.recorrido = new System.Windows.Forms.ColumnHeader();
+            this.errorCombustible = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorCombustible)).BeginInit();
             this.SuspendLayout();
             // 
             // listPedidos
@@ -254,6 +257,10 @@
             this.recorrido.Text = "Recorrido";
             this.recorrido.Width = 150;
             // 
+            // errorCombustible
+            // 
+            this.errorCombustible.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -281,6 +288,7 @@
             this.Name = "Form1";
             this.Text = "Cocimundo";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorCombustible)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,5 +320,6 @@
         private ColumnHeader Destino;
         private ListView listRecorrrido;
         private ColumnHeader recorrido;
+        private ErrorProvider errorCombustible;
     }
 }

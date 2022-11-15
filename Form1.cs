@@ -139,6 +139,10 @@ public partial class Form1 : Form
                 }
                 btnSiguiente.Enabled = true;
                 furgon.repartirPedidos(pedidos);
+                if(furgon.flagCombustible)
+                {
+                    errorCombustible.SetError(btnSiguiente, "Error de combustible, recargando...");
+                }
                 break;
             case 1:
                 listaOrdenada = greedy.ordenarPedidos(furgoneta.pedidos);
@@ -149,6 +153,10 @@ public partial class Form1 : Form
                 }
                 btnSiguiente.Enabled = true;
                 furgoneta.repartirPedidos(pedidos);
+                if (furgon.flagCombustible)
+                {
+                    errorCombustible.SetError(btnSiguiente, "Error de combustible, recargando...");
+                }
                 break;
             default:
                 listaOrdenada = greedy.ordenarPedidos(camioneta.pedidos);
@@ -161,6 +169,10 @@ public partial class Form1 : Form
                 if (contBoton == 4)
                     btnSiguiente.Enabled = false;
                 camioneta.repartirPedidos(pedidos);
+                if (furgon.flagCombustible)
+                {
+                    errorCombustible.SetError(btnSiguiente, "Error de combustible, recargando...");
+                }
                 break;
         }
         btnGreedy.Enabled = false;
