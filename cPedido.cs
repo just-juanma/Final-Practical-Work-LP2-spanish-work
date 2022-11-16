@@ -18,7 +18,6 @@ namespace tp_final
         public int peso { get; set; }
         public int prioridad { get; set; }
         public string? barrio { get; set; }
-        public DateTime fecha { get; set; }
         public int ID { get; set; }
         public static int maxID { get; set; }
         public bool cargado;

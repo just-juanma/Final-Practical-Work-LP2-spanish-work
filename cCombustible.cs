@@ -15,6 +15,11 @@ namespace tp_final
             this.actual = 100;
         }
 
+        /// <summary>
+        /// Basandonos en los nodos recorridos del vehiculo, asigno un nuevo porcentaje de combustible
+        /// </summary>
+        /// <param name="vehiculo">Vehiculo a inspeccionar</param>
+        /// <returns>Porcentaje nuevo de combustible</returns>
         public float getActual(cVehiculo vehiculo)
         {
             if(vehiculo is cFurgon)

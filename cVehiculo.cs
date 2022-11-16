@@ -23,6 +23,13 @@ namespace tp_final
         protected cCombustible combustible;
         public static uint maxID = 0;
 
+        /// <summary>
+        /// Constructor principal para inicializar los vehiculos
+        /// </summary>
+        /// <param name="anchoMax">Ancho maximo del vehiculo</param>
+        /// <param name="largoMax">Largo maximo del vehiculo</param>
+        /// <param name="altoMax">Alto maximo del vehiculo</param>
+        /// <param name="pesoMax">Peso maximo del vehiculo</param>
         public cVehiculo(float anchoMax, float largoMax, float altoMax, int pesoMax)
         {
             ID = maxID++;
@@ -36,6 +43,11 @@ namespace tp_final
             this.flagCombustible = false;
         }
 
+        /// <summary>
+        /// Algoritmo que permite repartir los pedidos de la lista interna del vehiculo, y ademas limpiar los elementos 
+        /// cargados previamente de la lista total
+        /// </summary>
+        /// <param name="pedidosTotal">Lista de pedidos TOTAL</param>
         public void repartirPedidos(List<cPedido> pedidosTotal)
         {
             int i;

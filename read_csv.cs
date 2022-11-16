@@ -8,6 +8,11 @@ using System.Runtime;
 
 namespace csvfiles {
     public class _csv {
+        /// <summary>
+        /// Permite leer los pedidos del archivo "data.csv"
+        /// </summary>
+        /// <param name="greedy">Mediante la template del algoritmo mismo, la voy completando desde el archivo</param>
+        /// <returns></returns>
         public List<cPedido> read_csv(cGreedy greedy) {
             using (var reader = new StreamReader(Resources.archivo))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture)) {
@@ -25,8 +30,7 @@ namespace csvfiles {
                         alto = csv.GetField<float>("alto"),
                         peso = csv.GetField<int>("peso"),
                         prioridad = csv.GetField<int>("prioridad"),
-                        barrio = csv.GetField<string>("barrio"),
-                        fecha = new DateTime(csv.GetField<int>("fecha")),
+                        barrio = csv.GetField<string>("barrio")
                     };
                     record.ID = cPedido.maxID++;
                     if(csv.GetField<string>("template") != "")

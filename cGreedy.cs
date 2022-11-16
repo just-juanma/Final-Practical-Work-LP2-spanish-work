@@ -12,11 +12,18 @@ namespace tp_final
     public class cGreedy
     {
         public List<string> template { get; set; }
+        /// <summary>
+        /// Inicializacion de la template
+        /// </summary>
         public cGreedy()
         {
             template = new List<string>();
         }
-
+        /// <summary>
+        /// Ordena los pedidos mediante una lista auxiliar ordenada de ante mano
+        /// </summary>
+        /// <param name="pedidos">Lista de pedidos a ordenar</param>
+        /// <returns>Lista de pedidos ordenada</returns>
         public List<cPedido> ordenarPedidos(List<cPedido> pedidos)
         {
             List<cPedido> pedidosOrdenados = new List<cPedido>();

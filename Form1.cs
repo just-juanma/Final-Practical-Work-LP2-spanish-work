@@ -13,6 +13,9 @@ public partial class Form1 : Form
     public cFurgoneta furgoneta;
     public cCamioneta camioneta;
     public int contBoton = 0;
+    /// <summary>
+    /// Form de referencia para todo el programa
+    /// </summary>
     public Form1()
     {
         // Inicializaciones
@@ -36,6 +39,11 @@ public partial class Form1 : Form
 
     }
 
+    /// <summary>
+    /// Boton para ejecutar algoritmo de programacion dinamica
+    /// </summary>
+    /// <param name="sender">Datos enviados</param>
+    /// <param name="e">Eventos a ocurrir (Click)</param>
     private void button1_Click(object sender, EventArgs e)
     {
         txtBoxID.Clear();
@@ -110,6 +118,11 @@ public partial class Form1 : Form
 
     }
 
+    /// <summary>
+    /// Boton que permite avanzar al siguiente vehiculo
+    /// </summary>
+    /// <param name="sender">Datos enviados</param>
+    /// <param name="e">Eventos a ocurrir (Click)</param>
     private void btnSiguiente_Click(object sender, EventArgs e)
     {
         label1.Focus(); // para que no se seleccione ningun textbox por default
@@ -125,6 +138,11 @@ public partial class Form1 : Form
         btnSiguiente.Enabled = false;
     }
 
+    /// <summary>
+    /// Boton para ejecutar el algoritmo greedy
+    /// </summary>
+    /// <param name="sender">Datos enviados</param>
+    /// <param name="e">Eventos a ocurrir (Click)</param>
     private void d_Click(object sender, EventArgs e)
     {
         List<cPedido> listaOrdenada;
@@ -166,7 +184,7 @@ public partial class Form1 : Form
                     listRecorrrido.Items.Add(list);
                 }
                 btnSiguiente.Enabled = true;
-                if (contBoton == 4)
+                if (contBoton == 5)
                     btnSiguiente.Enabled = false;
                 camioneta.repartirPedidos(pedidos);
                 if (furgon.flagCombustible)
