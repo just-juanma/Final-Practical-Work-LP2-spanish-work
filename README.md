@@ -1,13 +1,14 @@
 # Final-Practical-Work-Universidad-Favaloro-LP1-spanish-work
 By [Josefina Herrera](https://github.com/josefinaherrera98) and Juan Manuel González Kapnik (owner).
-
+<br>
+Template proyect forked from https://github.com/UF-LP2/TP_Final, by [Ezequiel Stanganelli](https://github.com/eastanganelli) and [Francisco Campo](https://github.com/FCampo7)
+<br>
 Final note: 10/10.
 
 ## 📋 Table of contents
 1. [Project Description](#description)
 2. [How to Install and Run the Project](#howto)
 3. [License](#license)
-4. [References](#references)
 
 ## 💻 Project Description <a name="description"></a>
 The objective of the project was to design a perfect delivering sistem for a company. We had to use a greedier algorithm, and a dinamic programming algorithm. One of them was to be used to load deliveries into different vehicles, and the other algorithm was to be used to deliver the orders.
