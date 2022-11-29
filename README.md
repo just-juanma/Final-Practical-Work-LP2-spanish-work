@@ -1,7 +1,7 @@
 ## LP2-FinalWork (spanish)
 By [Josefina Herrera](https://github.com/josefinaherrera98) and Juan Manuel González Kapnik (owner).
 <br>
-Template proyect forked from https://github.com/UF-LP2/TP_Final, by [Ezequiel Stanganelli](https://github.com/eastanganelli) and [Francisco Campo](https://github.com/FCampo7)
+Template proyect forked from https://github.com/UF-LP2/TP_Final, by [Ezequiel Stanganelli](https://github.com/eastanganelli) and [Francisco Campo](https://github.com/FCampo7).
 <br>
 Final note: 10/10.
 
