@@ -22,7 +22,7 @@ To deliver the orders we opted for a greedier algorithm. In this way, the nodes 
 
 ## ⬇️ How to Install and Run the Project <a name="howto"></a>
 
-To use the project, we debug it using Visual Studio 2022 Community in C++. We understand that depending on the version of the IDE there may be conflicts. 
+To use the project, we debug it using Visual Studio 2022 Community in C#. We understand that depending on the version of the IDE there may be conflicts. 
 
 ## ©️ License <a name="license"></a>
 This Practical Work is subject to GPL-3.0 license, more information in the LICENSE.md file.
